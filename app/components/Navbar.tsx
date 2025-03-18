@@ -8,7 +8,7 @@ type NavbarProps={
 const Navbar : React.FC<NavbarProps> =({isConnected})=>{
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white  border-gray-200 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
         {/* Logo */}
         <a href="/" className="  flex items-center space-x-3 rtl:space-x-reverse">

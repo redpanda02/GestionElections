@@ -9,6 +9,7 @@ interface FormData {
   cni: string;
   password: string;
   nce: string;
+  role: 'candidate' | 'voter'; // Nouveau champ pour le rôle
 }
 
 export default function Signup() {
@@ -66,6 +67,7 @@ export default function Signup() {
             )}
           </div>
 
+          {/* Champ Numéro de carte électeur */}
           <div>
             <label className="block text-sm font-medium text-gray-900 dark:text-gray-300">
               Numéro de carte électeur
@@ -76,6 +78,36 @@ export default function Signup() {
             />
             {errors.nce && (
               <p className="text-red-600 text-sm mt-1">{errors.nce.message}</p>
+            )}
+          </div>
+
+          {/* Champ Rôle (Candidat ou Électeur) */}
+          <div>
+            <label className="block text-sm font-medium text-gray-900 dark:text-gray-300">
+              Vous êtes :
+            </label>
+            <div className="mt-2 space-x-4">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="voter"
+                  {...register('role', { required: "Ce champ est obligatoire" })}
+                  className="form-radio h-4 w-4 text-blue-600 dark:text-blue-500"
+                />
+                <span className="ml-2 text-gray-900 dark:text-gray-300">Électeur</span>
+              </label>
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="candidate"
+                  {...register('role', { required: "Ce champ est obligatoire" })}
+                  className="form-radio h-4 w-4 text-blue-600 dark:text-blue-500"
+                />
+                <span className="ml-2 text-gray-900 dark:text-gray-300">Candidat</span>
+              </label>
+            </div>
+            {errors.role && (
+              <p className="text-red-600 text-sm mt-1">{errors.role.message}</p>
             )}
           </div>
 

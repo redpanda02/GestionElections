@@ -7,8 +7,8 @@ export default function Home() {
     <>
       <Navbar  isConnected={false} />
 
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center py-10 px-4">
-        <div className="w-full max-w-3xl bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg space-y-8">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center py-20 px-6">
+        <div className="  w-full max-w-3xl  bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg space-y-8">
           {/* Section 1 : Titre principal et description */}
           <div className="text-center">
             <h1 className="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
@@ -59,8 +59,8 @@ export default function Home() {
                   Le processus est simple et intuitif :
                 </p>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 mt-2">
-                  <li>Inscrivez-vous sur la plateforme en utilisant votre carte d'identité.</li>
-                  <li>Accédez à votre espace personnel pour parrainer un candidat.</li>
+                  <li>Inscrivez-vous sur la plateforme en utilisant votre carte d'identité et votre carte électeur.</li>
+                  <li>Accédez à votre espace personnel et visualisez la liste des candidats.</li>
                   <li>Validez votre parrainage en quelques étapes sécurisées.</li>
                 </ul>
               </div>
