@@ -1,0 +1,3 @@
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:53:47"},"timestamp":"2025-03-10T01:53:47.537Z"}
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:56:18"},"timestamp":"2025-03-10T01:56:18.395Z"}
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:59:13"},"timestamp":"2025-03-10T01:59:13.650Z"}

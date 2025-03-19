@@ -1,0 +1,8 @@
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:53:47"},"timestamp":"2025-03-10T01:53:47.539Z"}
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:56:18"},"timestamp":"2025-03-10T01:56:18.396Z"}
+{"level":"error","message":"Redis Error:","metadata":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-4078,"port":6379,"service":"parrainage-api","syscall":"connect","timestamp":"2025-03-10 01:59:13"},"timestamp":"2025-03-10T01:59:13.651Z"}
+{"level":"info","message":"Redis connected","metadata":{"service":"parrainage-api","timestamp":"2025-03-10 03:33:43"},"timestamp":"2025-03-10T03:33:43.270Z"}
+{"level":"info","message":"Redis connected","metadata":{"service":"parrainage-api","timestamp":"2025-03-10 03:39:03"},"timestamp":"2025-03-10T03:39:03.280Z"}
+{"level":"info","message":"Redis connected","metadata":{"service":"parrainage-api","timestamp":"2025-03-10 03:57:06"},"timestamp":"2025-03-10T03:57:06.660Z"}
+{"level":"info","message":"Redis connected","metadata":{"service":"parrainage-api","timestamp":"2025-03-10 03:59:15"},"timestamp":"2025-03-10T03:59:15.908Z"}
+{"level":"info","message":"Redis connected","metadata":{"service":"parrainage-api","timestamp":"2025-03-10 04:01:39"},"timestamp":"2025-03-10T04:01:39.225Z"}

@@ -1,0 +1,24 @@
+{
+  "welcome": "Bienvenue sur l'application de parrainage électoral",
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "passwordReset": "Réinitialisation du mot de passe"
+  },
+  "candidat": {
+    "create": "Créer un candidat",
+    "update": "Modifier le candidat",
+    "delete": "Supprimer le candidat",
+    "list": "Liste des candidats"
+  },
+  "parrainage": {
+    "create": "Créer un parrainage",
+    "verify": "Vérifier un parrainage",
+    "status": {
+      "pending": "En attente",
+      "valid": "Validé",
+      "invalid": "Invalide"
+    }
+  }
+} 

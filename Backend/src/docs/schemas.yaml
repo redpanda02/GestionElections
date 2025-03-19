@@ -1,0 +1,77 @@
+components:
+  schemas:
+    Utilisateur:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        nom:
+          type: string
+        prenom:
+          type: string
+        role:
+          type: string
+          enum: [ADMIN, CANDIDAT, ELECTEUR]
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Candidat:
+      type: object
+      properties:
+        id:
+          type: integer
+        utilisateurId:
+          type: integer
+        numCarteElecteur:
+          type: string
+        nomParti:
+          type: string
+        slogan:
+          type: string
+        photo:
+          type: string
+        couleurs:
+          type: array
+          items:
+            type: string
+        infos:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Parrainage:
+      type: object
+      properties:
+        id:
+          type: integer
+        candidatId:
+          type: integer
+        electeurId:
+          type: integer
+        periodeId:
+          type: integer
+        dateParrainage:
+          type: string
+          format: date-time
+        codeVerification:
+          type: string
+        statut:
+          type: string
+          enum: [EN_ATTENTE, VALIDE, REJETE]
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time 

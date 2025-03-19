@@ -1,0 +1,19 @@
+{
+  "general": {
+    "notFound": "Ressource non trouvée",
+    "serverError": "Erreur interne du serveur",
+    "unauthorized": "Non autorisé",
+    "forbidden": "Accès interdit",
+    "validation": "Erreur de validation"
+  },
+  "auth": {
+    "invalidCredentials": "Identifiants invalides",
+    "emailExists": "Cette adresse email est déjà utilisée",
+    "weakPassword": "Le mot de passe ne respecte pas les critères de sécurité"
+  },
+  "parrainage": {
+    "periodClosed": "La période de parrainage est fermée",
+    "alreadySponsored": "L'électeur a déjà parrainé un candidat",
+    "invalidCode": "Code de vérification invalide"
+  }
+} 
