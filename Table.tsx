@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CandidateTable = () => {
-    const candidates = [
-        { name: "John Doe", category: "Software Engineer", coalition: "Les cons" },
-        { name: "Jane Smith", category: "Designer", coalition: "Les polytech" },
-        { name: "Alice Brown", category: "Product Manager", coalition: "Bou bakh bi" },
-        { name: "Bob Johnson", category: "Marketing", coalition: "Yolo" },
-        { name: "Charlie Lee", category: "Data Scientist", coalition: "Senegal Emergent" }
-    ];
+    const [candidates, setCandidates] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch('/api/v1/candidats')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors du chargement des candidats');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Assuming the API returns an object with a 'data' property
+                setCandidates(data.data || []);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(err.message);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <div>Chargement...</div>;
+    if (error) return <div>Erreur : {error}</div>;
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -18,10 +36,10 @@ const CandidateTable = () => {
                             Nom du candidat
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Métier
+                            Email
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Coalition
+                            Parti
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Parrainer
@@ -30,17 +48,16 @@ const CandidateTable = () => {
                 </thead>
                 <tbody>
                     {candidates.map((candidate, index) => (
-                        <tr key={index} className={`odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200`}>
+                        <tr key={index} className="odd:bg-white dark:odd:bg-gray-900 even:bg-gray-50 dark:even:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {candidate.name}
+                                {candidate.nom} {candidate.prenom}
                             </th>
                             <td className="px-6 py-4">
-                                {candidate.category}
+                                {candidate.email}
                             </td>
                             <td className="px-6 py-4">
-                                {candidate.coalition}
+                                {candidate.parti}
                             </td>
-                            
                             <td className="px-6 py-4">
                                 <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                     Parrainer
