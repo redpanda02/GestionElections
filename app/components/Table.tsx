@@ -2,8 +2,8 @@ import React from 'react';
 
 const CandidateTable = () => {
     const candidates = [
-        { name: "John Doe", category: "Software Engineer", coalition: "Les cons" },
-        { name: "Jane Smith", category: "Designer", coalition: "Les polytech" },
+        { name: "John Doe", category: "Software Engineer", coalition: "Initiative" },
+        { name: "Jane Smith", category: "Designer", coalition: "GOT" },
         { name: "Alice Brown", category: "Product Manager", coalition: "Bou bakh bi" },
         { name: "Bob Johnson", category: "Marketing", coalition: "Yolo" },
         { name: "Charlie Lee", category: "Data Scientist", coalition: "Senegal Emergent" }

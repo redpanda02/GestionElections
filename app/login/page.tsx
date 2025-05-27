@@ -8,6 +8,7 @@ interface FormData {
   cni: string;
   password: string;
   nce: string;
+  role: 'candidate' | 'voter'; // Nouveau champ pour le rôle
 }
 
 export default function Login() {
@@ -17,13 +18,17 @@ export default function Login() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Envoi des données de connexion (numéro de CNI et mot de passe) au backend
+      // Envoi des données de connexion (numéro de CNI, mot de passe et rôle) au backend
       const response = await axios.post('/api/login', data);
       setMessage('Connexion réussie');
-      
-      // Rediriger l'utilisateur vers la page d'accueil ou autre page après la connexion
+
+      // Rediriger l'utilisateur en fonction de son rôle
       setTimeout(() => {
-        router.push('/home'); // Redirection après la connexion réussie
+        if (data.role === 'candidate') {
+          router.push('/candidate-dashboard'); // Redirection vers le tableau de bord candidat
+        } else {
+          router.push('/voter-dashboard'); // Redirection vers le tableau de bord électeur
+        }
       }, 2000); // Attendre 2 secondes avant la redirection
     } catch (error) {
       setMessage('Numéro de CNI ou mot de passe incorrect.');
@@ -51,6 +56,7 @@ export default function Login() {
             )}
           </div>
 
+          {/* Champ Numéro de carte électeur */}
           <div>
             <label className="block text-sm font-medium text-gray-900 dark:text-gray-300">
               Numéro de carte électeur
@@ -61,6 +67,36 @@ export default function Login() {
             />
             {errors.nce && (
               <p className="text-red-600 text-sm mt-1">{errors.nce.message}</p>
+            )}
+          </div>
+
+          {/* Champ Rôle (Candidat ou Électeur) */}
+          <div>
+            <label className="block text-sm font-medium text-gray-900 dark:text-gray-300">
+              Vous êtes :
+            </label>
+            <div className="mt-2 space-x-4">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="voter"
+                  {...register('role', { required: "Ce champ est obligatoire" })}
+                  className="form-radio h-4 w-4 text-blue-600 dark:text-blue-500"
+                />
+                <span className="ml-2 text-gray-900 dark:text-gray-300">Électeur</span>
+              </label>
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="candidate"
+                  {...register('role', { required: "Ce champ est obligatoire" })}
+                  className="form-radio h-4 w-4 text-blue-600 dark:text-blue-500"
+                />
+                <span className="ml-2 text-gray-900 dark:text-gray-300">Candidat</span>
+              </label>
+            </div>
+            {errors.role && (
+              <p className="text-red-600 text-sm mt-1">{errors.role.message}</p>
             )}
           </div>
 
